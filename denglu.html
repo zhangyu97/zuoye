@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录2级页</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: khaki;
+    }
+    div{
+        width: 330px;
+        height: 230px;
+        border-radius: 20px;
+        padding: 30px;
+        background-color: #ffffff;
+        margin: 100px auto;
+    }
+    h1{
+        font-size: 22px;
+        color: tan;
+        text-align: center;
+        margin: 0;
+    }
+    p{
+        font-size: 18px;
+        color: #33594E;
+        text-align: center;
+        font-weight: bold;
+        margin: 50px 0;
+    }
+    span{
+        font-size: 18px;
+        color: red;
+    }
+    input[value]{
+        display: block;
+        width: 100px;
+        height: 35px;
+        margin: 0 auto;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        background-color: #3989FA;
+    }
+
+</style>
+<body>
+<div class="box">
+    <main>
+        <h1>错误提示</h1>
+        <p><span>5</span>s后将跳转至登录页面</p>
+        <input type="submit" value="返回登录页面" class="submit">
+    </main>
+</div>
+</body>
+</html>
+<script>
+    let span = document.querySelector('span');
+    let submit = document.querySelector('.submit');
+    let num = 4;
+    var t =  setInterval(function(){
+        span.innerText = num;
+        num--;
+        if (num <0){
+            clearInterval(t);
+            location.replace('index登录.html');
+        }
+    },1000)
+    submit.onclick = function () {
+        location.replace('index登录.html');
+    }
+</script>

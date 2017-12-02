@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: khaki;
+    }
+    h1{
+        font-size: 22px;
+        color: tan;
+        text-align: center;
+        margin: 0;
+    }
+    div{
+        width: 330px;
+        height: 230px;
+        border-radius: 20px;
+        padding: 30px;
+        background-color: #ffffff;
+        margin: 100px auto;
+
+    }
+    section input{
+        width:300px;
+        height:35px;
+        border: none;
+        border: 1px solid rgba(0,0,0,.3);
+        text-align: left;
+        outline: none;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    section{
+        margin: 10px 0 10px 10px;
+    }
+    input[value]{
+        display: block;
+        width: 80px;
+        height: 35px;
+        margin: 0 auto;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        background-color: #3989FA;
+    }
+
+</style>
+<body>
+    <div id="">
+        <h1>用户登录</h1>
+        <section>
+            <label for="">用户名</label>
+            <input type="text" placeholder="请输入用户名" name="username" class="username">
+        </section>
+        <section>
+            <label for="">密码</label>
+            <input type="pass" placeholder="请输入密码" name="userpass" class="userpass">
+        </section>
+        <input type="submit" value="登录"class="submit">
+    </div>
+</body>
+</html>
+<script>
+    let username = document.querySelector('.username');
+    let userpass = document.querySelector('.userpass');
+    let submit = document.querySelector('.submit');
+//        console.log(username,userpass,submit);
+    submit.onclick = function () {
+        if(username.value.trim()=='zhangyu'&& userpass.value.trim()=='1234567'){
+                alert('登录成功');
+        }else {
+            location.replace('denglu.html');
+        }
+    }
+</script>

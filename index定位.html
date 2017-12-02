@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定位</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 500px;
+        height: 3000px;
+        border: 2px solid red;
+        margin: 30px auto;
+    }
+    .oo{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 100px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        line-height: 100px;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffff;
+    }
+    .lian{
+        width: 100px;
+        height: 50px;
+        background-color:blue;
+        position: fixed;
+        top:30px;
+        right: 50px;
+        border-radius: 30px;
+        text-align: center;
+        line-height: 50px;
+    }
+    a{
+        color:#000;
+    }
+
+</style>
+<body>
+<a href="index滚轮.html">
+    <div class="lian">滚轮</div>
+</a>
+<div class="box"></div>
+<div class="oo">TOP</div>
+
+</body>
+<script>
+    let oo = document.querySelector('.oo');
+    window.onscroll = function () {
+        if(window.scrollY>300){
+            oo.style.width = "100px";
+            oo.style.opacity=1;
+        }else {
+            oo.style.opacity=0;
+            oo.style.width = "0";
+        }
+    }
+    oo.onclick = function () {
+        var t = setInterval(function () {
+            window.scrollBy(0,-10);
+            if(window.scrollY==0){
+                clearInterval(t);
+            }
+        },20)
+    }
+</script>
+</html>
